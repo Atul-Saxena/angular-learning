@@ -7,5 +7,5 @@ export const authGuard: CanActivateFn = (route:ActivatedRouteSnapshot, state:Rou
   const router:Router = inject(Router);
   const protectedRoutes:string[] = ['/home', '/post-list', '/user-list', '/post/:id', '/user/:id'];
   
-  return protectedRoutes.includes(state.url) && userService.loggedInUser ? true : router.navigate(['/login']);
+  return protectedRoutes.includes(state.url) && userService.loggedInUser ? true : router.navigate(['/']);
 };
