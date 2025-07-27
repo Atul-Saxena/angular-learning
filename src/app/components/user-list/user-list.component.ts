@@ -30,4 +30,9 @@ export class UserListComponent {
     this.users = this.userService.getUsers();
   }
 
+  deleteUser(id: number) {
+    this.userService.deleteUser(id);
+    this.users = this.userService.getUsers();
+  }
+
 }

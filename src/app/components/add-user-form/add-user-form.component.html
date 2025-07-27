@@ -1,0 +1,69 @@
+<p>add-user-form works!</p>
+<form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+
+  <label>First Name:</label>
+  <input type="text" formControlName="firstName">
+  <div *ngIf="createUserForm.get('firstName')?.invalid && createUserForm.get('firstName')?.touched">
+    First name is required (min 2 chars)
+  </div>
+
+  <label>Last Name:</label>
+  <input type="text" formControlName="lastName">
+  <div *ngIf="createUserForm.get('lastName')?.invalid && createUserForm.get('lastName')?.touched">
+    Last name is required (min 2 chars)
+  </div>
+
+  <label>Gender:</label>
+  <select formControlName="gender">
+    <option value="">Select</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
+  <div *ngIf="createUserForm.get('gender')?.invalid && createUserForm.get('gender')?.touched">
+    Gender is required
+  </div>
+
+  <label>Age:</label>
+  <input type="number" formControlName="age">
+  <div *ngIf="createUserForm.get('age')?.invalid && createUserForm.get('age')?.touched">
+    Age is required
+  </div>
+
+  <label>Date of Birth:</label>
+  <input type="date" formControlName="dob">
+  <div *ngIf="createUserForm.get('dob')?.invalid && createUserForm.get('dob')?.touched">
+    DOB is required
+  </div>
+
+  <label>Phone:</label>
+  <input type="text" formControlName="phone">
+  <div *ngIf="createUserForm.get('phone')?.invalid && createUserForm.get('phone')?.touched">
+    Phone is required
+  </div>
+
+  <label>Email:</label>
+  <input type="email" formControlName="email">
+  <div *ngIf="createUserForm.get('email')?.invalid && createUserForm.get('email')?.touched">
+    Email is required
+  </div>
+
+  <label>Role:</label>
+  <select formControlName="role">
+    <option value="">Select</option>
+    <option value="admin">Admin</option>
+    <option value="user">User</option>
+  </select>
+
+  <div *ngIf="createUserForm.get('role')?.invalid && createUserForm.get('role')?.touched">
+    Role is required
+  </div>
+
+  <label>Password:</label>
+  <input type="password" formControlName="password">
+  <div *ngIf="createUserForm.get('password')?.invalid && createUserForm.get('password')?.touched">
+    Password is required (min 2 chars)
+  </div>
+
+  <button type="submit" [disabled]="createUserForm.invalid">Create User</button>
+</form>

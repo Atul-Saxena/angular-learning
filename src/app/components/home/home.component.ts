@@ -26,4 +26,8 @@ export class HomeComponent {
     console.log('User logged out');
   }
 
+  addUser(){
+    
+  }
+
 }

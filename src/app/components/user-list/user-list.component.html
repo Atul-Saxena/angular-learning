@@ -1,5 +1,4 @@
-<div class="post-list">
-  <h2>Posts</h2>
+<div>
 
   <div *ngFor="let user of users" class="post-item">
     <h3>{{ user.firstName }} {{user.lastName}}</h3>
@@ -10,5 +9,6 @@
     <p>Website: {{ user.gender }}</p>
     <p>Website: {{ user.role }}</p>
     <p>Website: {{ user.id }}</p>
+    <button (click)="deleteUser(user.id)">Delete</button>
   </div>
 </div>

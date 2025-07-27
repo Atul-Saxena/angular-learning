@@ -84,4 +84,26 @@ export class UserServicesService {
     console.log('User logged out');
   }
 
+  addUser(user: any) {
+    const newUser = { ...user, id: this.users.length + 1 };
+    this.users.push(newUser);
+    console.log(`User added: ${newUser.firstName} ${newUser.lastName}`);
+    
+    return newUser;
+  }
+
+  deleteUser(id: number) {
+    const index = this.users.findIndex(user => user.id === id);
+    if (index !== -1) {
+      const deletedUser = this.users.splice(index, 1)[0];
+      console.log(`User deleted: ${deletedUser.firstName} ${deletedUser.lastName}`);
+      
+      return deletedUser;
+    } else {
+      console.log('Delete failed: User not found');
+      
+      return null;
+    }
+  }
+
 }

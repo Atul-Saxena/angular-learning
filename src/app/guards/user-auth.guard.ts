@@ -5,6 +5,6 @@ import { UserServicesService } from '../services/user-services.service';
 export const userAuthGuard: CanActivateFn = (route, state) => {
   const userService = inject(UserServicesService);
   const router: Router = inject(Router);
-  const protectedRoutes: string[] = ['/home', '/post-list', '/post/:id', '/user/:id'];
+  const protectedRoutes: string[] = ['/home', '/post-list', '/post/:id', '/user/:id', '/create-post'];
   return protectedRoutes.includes(state.url) && userService.isUser() ? true : router.navigate(['/asdadc']);
 };

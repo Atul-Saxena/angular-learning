@@ -31,4 +31,5 @@ export class PostDetailsComponent {
       this.post=null;
     }
   }
+
 }
