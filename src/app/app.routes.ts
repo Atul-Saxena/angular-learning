@@ -16,7 +16,7 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent, canActivate:[authGuard]},
     { path: 'post-list', component: PostListComponent, canActivate:[authGuard,userAuthGuard]},
     { path: 'user-list', component: UserListComponent, canActivate:[authGuard,adminAuthGuard]},
-    { path: 'post/:id', component: PostDetailsComponent, canActivate:[authGuard,userAuthGuard]},
+    { path: 'post/:id', component: PostDetailsComponent, canActivate:[userAuthGuard]},
     { path: 'user/:id', component: UserProfileComponent, canActivate:[authGuard]},
     { path: 'create-post', component: AddPostFormComponent, canActivate:[userAuthGuard]},
     { path: 'create-user', component: AddUserFormComponent, canActivate:[adminAuthGuard]},
