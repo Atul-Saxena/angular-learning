@@ -79,4 +79,9 @@ export class UserServicesService {
     return this.loggedInUser && this.loggedInUser.role === 'user';
   }
 
+  logout() {
+    this.loggedInUser = null;
+    console.log('User logged out');
+  }
+
 }

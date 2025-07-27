@@ -3,4 +3,5 @@
   <a *ngIf="role==='user'" routerLink="/post-list" routerLinkActive="active">Post List</a>
   <a *ngIf="role==='admin'" routerLink="/user-list" routerLinkActive="active">User List</a>
   <a [routerLink]="['/user',userId]">My Profile</a>
+  <button (click)="logOutUser()">Logout</button>
 </nav>
