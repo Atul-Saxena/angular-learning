@@ -1,0 +1,14 @@
+<div class="post-list">
+  <h2>Posts</h2>
+
+  <div *ngFor="let user of users" class="post-item">
+    <h3>{{ user.firstName }} {{user.lastName}}</h3>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <p>Website: {{ user.age }}</p>
+    <p>Website: {{ user.dob }}</p>
+    <p>Website: {{ user.gender }}</p>
+    <p>Website: {{ user.role }}</p>
+    <p>Website: {{ user.id }}</p>
+  </div>
+</div>

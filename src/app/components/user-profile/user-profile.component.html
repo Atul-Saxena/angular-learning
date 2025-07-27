@@ -1,0 +1,15 @@
+<div class="post-list">
+  <h2>Posts</h2>
+
+  <div *ngIf="user" class="post-item">
+    <h3>{{ user.firstName }} {{user.lastName}}</h3>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <p>age: {{ user.age }}</p>
+    <p>date of birth: {{ user.dob }}</p>
+    <p>gender: {{ user.gender }}</p>
+    <p>role: {{ user.role }}</p>
+    <p>userID: {{ user.id }}</p>
+  </div>
+  <h1 *ngIf="!user">User not Found</h1>
+</div>
