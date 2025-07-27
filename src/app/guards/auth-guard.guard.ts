@@ -5,7 +5,13 @@ import { UserServicesService } from '../services/user-services.service';
 export const authGuard: CanActivateFn = (route:ActivatedRouteSnapshot, state:RouterStateSnapshot) => {
   const userService = inject(UserServicesService);
   const router:Router = inject(Router);
-  const protectedRoutes:string[] = ['/home', '/post-list', '/user-list', '/post/:id', '/user/:id'];
+  const protectedRoutes:string[] = ['/home', '/post-list', '/user-list', '/post/:id'];
+
+  const protectedPrefixes: string[] = ['/user/'];
+
+  const isProtected = 
+    protectedRoutes.includes(state.url) || 
+    protectedPrefixes.some(prefix => state.url.startsWith(prefix));
   
-  return protectedRoutes.includes(state.url) && userService.loggedInUser ? true : router.navigate(['/']);
+  return isProtected && userService.loggedInUser ? true : router.navigate(['/']);
 };

@@ -6,5 +6,5 @@ export const adminAuthGuard: CanActivateFn = (route: ActivatedRouteSnapshot, sta
   const userService = inject(UserServicesService);
   const router: Router = inject(Router);
   const protectedRoutes: string[] = ['/home','/user-list', '/user/:id'];
-  return protectedRoutes.includes(state.url) && userService.isAdmin() ? true : router.navigate(['/home']);
+  return protectedRoutes.includes(state.url) && userService.isAdmin() ? true : router.navigate(['/sdcsdcsd']);
 };
